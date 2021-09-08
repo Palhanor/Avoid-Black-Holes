@@ -1,28 +1,3 @@
-/* 
-*********** CORRIGIR BUGS ***********
-Otimização e boas práticas - Organizar e otimizar códigos HTML, CSS e JS (matriz)
-Funcional - O reload no fim do jogo faz perder toda a configuração inicial
-Funcional - O player consegue andar fora do canvas no -20
-Funcional - O Black Hole pode surgir exatamente em cima do player
-Design - Melhorar os campos (input number, radius, select+ option)
-Design - Adicionar alguma responsividade e ajustar posições de elementos
-
-*********** IMPLEMENTAR FEATURES ***********
-CONTROLES PAINEL
-    Funcional - Grid: linhas ou plano (painel)
-    Funcional - Bordas: teletransporte ou sólidas (painel)
-CONTROLES BARRA DE NAVEGAÇÃO
-    Funcional - Idioma: pt-br ou en (barra)
-    Design - Tema: light ou dark mode (barra)
-CONTROLES JOGO
-    Funcional - Jogo: play/pause/redefinir/encerrar (jogo)
-OUTROS
-    Otimização e boas práticas - Código em inglês
-    Funcional - Adicionar a navegação (informações e colabore)
-    Design - Adicionar sobra com blur nos buracos negros
-
-    Longo prazo: Criar um sistema multiplayer
-*/
 
     /*********** DECLARAÇÃO DE VARIÁVEIS ************/
 
