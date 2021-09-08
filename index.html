@@ -17,54 +17,44 @@
     <title lang="en">Avoid Black Holes</title>
 </head>
     <body>
+        <header>
+            <img id="#imagemPrincipal" src="Images/black_hole.png" alt="Icone de buraco negro" width="50">
+            <h1>Avoid Black Holes</h1>
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Colaborate</a></li>
+            </ul>
+        </header>
 
-        <script>
-            document.body.style.zoom = 0.8;
-        </script>
+        <main id="blocoControles">
+            <h2>Controls</h2>
+            <label for="nivelVelocidade">Speed</label><br>
+            <input type="range" id="nivelVelocidade" name="nivelVelocidade" min="50" max="200" value="120">
+            <label for="numObstaculos">Black Holes</label><br>
+            <input type="number" id="numObstaculos" name="numObstaculos" min="1" max="5" value="1">
+            <label for="corPersonagem">Player color </label><input type="color" id="corPersonagem" value="#666666">
+            <label for="corComida">Food color </label><input type="color" id="corComida" value="#ff0000">
+            <button id="iniciarJogo" type="button">Play</button>
+        </main>
 
-        <div id="box">
-            <img src="Images/black_hole.png" alt="">
-            <h1 id="placar" lang="en">Avoid Black Holes</h1>
-        </div>
-
-        <canvas id="tela" width="1000" height="500"></canvas>
-
-        <div id="modalControles">
-            <header>
-                <img id="#imagemPrincipal" src="Images/black_hole.png" alt="Icone de buraco negro" width="90">
-                <h1>Avoid Black Holes</h1>
-                <ul>
-                    <li><a href="#">Informações</a></li>
-                    <li><a href="#">Colabore</a></li>
-                    <!-- <li id="nightMode"><i class="fas fa-sun"></i></li> -->
-                </ul>
-            </header>
-            <div id="blocoControles">
-                <h2>Controles</h2>
-                <label for="nivelVelocidade">Speed</label><br>
-                <input type="range" id="nivelVelocidade" name="nivelVelocidade" min="50" max="200" value="120">
-                <label for="numObstaculos">Black Holes</label><br>
-                <input type="number" id="numObstaculos" name="numObstaculos" min="1" max="5" value="1">
-                <!-- Label para o grid
-                <input type="radio" id="comGrid" name="temGrid" value="sim" disabled><label for="comGrid">Grid</label><br>
-                <input type="radio" id="semGrid" name="temGrid" value="não" disabled><label for="semGrid">Plano</label><br> -->
-                <label for="corPersonagem">Player color: </label><input type="color" id="corPersonagem" value="#666666"><br><br>
-                <label for="corComida">Food color: </label><input type="color" id="corComida" value="#ff0000">
-                <button id="iniciarJogo" type="button">Play</button>
+        <div id="modalGame">
+            <div id="box">
+                <img src="Images/black_hole.png" alt="">
+                <h1 id="placar" lang="en">Avoid Black Holes</h1>
             </div>
-            <footer>
-                <ul>
-                    <li><a href="#"><i class="fas fa-envelope"></i></a></li>
-                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fab fa-github"></i></a></li>
-                </ul>
-            </footer>
+    
+            <canvas id="tela" width="800" height="400"></canvas>
         </div>
+
+        <footer>
+            <ul>
+                <li><a href="#"><i class="fas fa-envelope"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-github"></i></a></li>
+            </ul>
+        </footer>
                
         <script src="https://kit.fontawesome.com/e47ec628f8.js" crossorigin="anonymous"></script>
         <script src="JS/game.js"></script>
-        <!-- <script src="night_mode.js"></script> -->
-        <!-- <script src="idioms.js"></script>  -->
-
     </body>
 </html>

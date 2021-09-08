@@ -38,8 +38,8 @@ OUTROS
     var foodColorInput = document.querySelector("#corComida");
 
     // Generate Player position
-    var posicaoPlayerX = generateRandom(50);
-    var posicaoPlayerY = generateRandom(25);
+    var posicaoPlayerX = generateRandom(40);
+    var posicaoPlayerY = generateRandom(20);
 
     // Set Food variable positions
     var posicaoComidinhaX;
@@ -55,7 +55,15 @@ OUTROS
     var contadorPontos = 0;
     var jogando = false;
     var playerColor = "#666666";
-    var foodColor = "#FF0000"
+    var foodColor = "#FF0000";
+
+    var playerSize = 20;
+    /*
+    var screenWidth = 800;
+    var screenHeight = 400;
+    var numBlocksX = 40;
+    var numBlocksY = 20;
+    */
 
     // Movement controls
     var andaBaixo;
@@ -73,7 +81,8 @@ OUTROS
     function iniciaJogo() {
         if (jogando == false) {
             jogando = true;
-            document.querySelector("#modalControles").style.display = "none";
+            document.querySelector("#modalGame").style.display = "block";
+            document.querySelector("footer").style.display = "none";
             velocidade = velocidadeInput.value;
             numBlackHoles = numBlackHolesInput.value;
             playerColor = playerColorInput.value;
@@ -86,8 +95,8 @@ OUTROS
 
     // Desenha a tela inicial quando começa (e em cada movimento)
     function desenhaTela() {
-        for(let x = 0; x < 1000; x += 20) {
-            for(let y = 0; y < 500; y += 20) {
+        for(let x = 0; x < 800; x += 20) {
+            for(let y = 0; y < 400; y += 20) {
                 pincel.fillStyle = "#efefef";
                 pincel.fillRect(x, y, 20, 20);
                 pincel.strokeStyle = "#e3e3e3";
@@ -117,12 +126,12 @@ OUTROS
 
     // Cria nova comidinha
     function criaNovaComidinha() {
-        posicaoComidinhaX = generateRandom(50);
-        posicaoComidinhaY = generateRandom(25);
+        posicaoComidinhaX = generateRandom(40);
+        posicaoComidinhaY = generateRandom(20);
         for (let i = 0; i < obstaculosX.length; i++) {
             if (posicaoComidinhaX == obstaculosX[i] && posicaoComidinhaY == obstaculosY[i]) {
-                posicaoComidinhaX = generateRandom(50);
-                posicaoComidinhaY = generateRandom(25);
+                posicaoComidinhaX = generateRandom(40);
+                posicaoComidinhaY = generateRandom(20);
             }
         }
         desenhaComidinha();
@@ -139,8 +148,8 @@ OUTROS
     // Cria novos Back Holes
     function criaNovosBlackholes() {
         for (let i = 0; i < numBlackHoles; i++) {
-            var novoObstaculoX = generateRandom(50);
-            var novoObstaculoY = generateRandom(25);
+            var novoObstaculoX = generateRandom(40);
+            var novoObstaculoY = generateRandom(20);
             obstaculosX.push(novoObstaculoX);
             obstaculosY.push(novoObstaculoY);
             desenhaBlackholes();
@@ -162,7 +171,7 @@ OUTROS
         if (posicaoPlayerX == posicaoComidinhaX && posicaoPlayerY == posicaoComidinhaY) {
             contadorPontos++;
             placar.innerText = contadorPontos;
-            box.style.padding = "15px 140px";
+            box.style.padding = "15px 110px";
             criaNovosBlackholes();
             criaNovaComidinha();
             desenhaComidinha();
@@ -182,10 +191,10 @@ OUTROS
                 limpaBaixo();
                 limpaEsquerda();
                 tela.style.display = "none";
-                box.style.marginTop = "200px";
-                box.style.height = "300px";
+                box.style.marginTop = "150px";
+                box.style.height = "220px";
                 box.style.textAlign = "center";
-                box.style.padding = "100px 30px";
+                box.style.padding = "60px 30px";
                 box.innerHTML = "<strong>Pontuação: </strong>" + contadorPontos + "<br><strong>Velocidade: </strong>" + velocidade + "<br><strong>Black Holes por vez: </strong>" + numBlackHoles;
             }
         }
@@ -195,14 +204,14 @@ OUTROS
     function teletransporte() {
         //console.log(posicaoPlayerX);
         //console.log(posicaoPlayerY);
-        if (posicaoPlayerX >= 1000) {
+        if (posicaoPlayerX >= 800) {
             posicaoPlayerX = -20;
         } else if (posicaoPlayerX < 0) {
-            posicaoPlayerX = 1000;
-        } else if (posicaoPlayerY >= 500) {
+            posicaoPlayerX = 800;
+        } else if (posicaoPlayerY >= 400) {
             posicaoPlayerY = -20;
         } else if (posicaoPlayerY < 0) {
-            posicaoPlayerY = 500;
+            posicaoPlayerY = 400;
         }
     }
 

@@ -8,6 +8,7 @@
 } 
 body {
     background-color: #F7FAFC;
+    overflow: hidden;
 }
 header {
     box-shadow: 0 3px 10px lightgray;
@@ -17,14 +18,18 @@ header {
     width: 100%;
     padding: 15px 80px 15px 100px;
     margin-bottom: 30px;
-    height: 120px;
+    height: 80px;
 }
 header img, header h1, header ul, header li {
     display: inline-block;
     cursor: pointer;
 }
+/*header #imagemPrincipal {
+    width: 40px;
+    height: 40px;
+}*/
 header h1 {
-    font-size: 32px;
+    font-size: 28px;
     margin: 0px 30px;
     position: absolute;
     top: 50%;
@@ -32,10 +37,10 @@ header h1 {
 }
 header ul {
     float: right;
-    margin: 30px 150px;
+    margin: 13px 150px;
 }
 header li a {
-    font-size: 22px;
+    font-size: 18px;
     color: black;
     text-decoration: none;
 }
@@ -43,35 +48,29 @@ header li a:hover {
     color: #fdbd1d;
 }
 header li {
-    margin: 0px 0px 0px 60px;
+    margin: 0px 0px 0px 30px;
 }
-/*
-header .fab, header .fas {
-    font-size: 20px;
-    color: gray;
-}
-*/
 #box {
-    width: 420px;
-    height: 100px;
-    border-radius: 15px;
-    margin: 30px auto;
+    width: 320px;
+    height: 80px;
+    border-radius: 12px;
+    margin: 15px auto 25px;
     background: linear-gradient(135deg, #ebf1f5, #FEFEFE);
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.08), -10px -10px 15px rgba(255, 255, 255, 0.8);
-    padding: 15px 50px;
+    padding: 15px 40px;
     position: relative;
     cursor: pointer;
     transition: 0.3s;
     line-height: 1.8;
 }
 #box img {
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
 }
 #box h1 {
     display: inline-block;
-    margin-left: 20px;
-    font-size: 28px;
+    margin-left: 15px;
+    font-size: 22px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -82,8 +81,8 @@ header .fab, header .fas {
     border: 2px solid #BBB;
     background-color: #efefef;
 }
-#modalControles {
-    display: block;
+#modalGame {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -93,27 +92,28 @@ header .fab, header .fas {
     padding: 10px 0px;
 }
 #blocoControles {
-    width: 400px;
-    height: 440px;
+    width: 350px;
+    height: 320px;
     border-radius: 15px;
-    margin: 180px auto;
+    margin: 140px auto;
     background: linear-gradient(135deg, #ebf1f5, #FEFEFE);
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.08), -10px -10px 15px rgba(255, 255, 255, 0.8);
     padding: 15px 50px;
     position: relative;
 }
 #blocoControles h2 {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 600;
     text-align: center;
-    margin: 15px;
+    margin: 10px 0px;
 }
 #blocoControles label {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
+    margin-right: 3px;
 }
 #nivelVelocidade {
-    margin: 15px 0 25px;
+    margin: 5px 0 15px;
     appearance: none;
     width: 100%;
     height: 20px;
@@ -133,14 +133,17 @@ header .fab, header .fas {
     cursor: pointer;
 } 
 #nivelVelocidade::-moz-range-thumb {
+    appearance: none;
     width: 20px;
     height: 20px;
     background: #27b6cf;
+    border: none;
+    border-radius: 0px;
     cursor: pointer;
 }
 #numObstaculos {
     appearance: none;
-    margin: 15px 0 25px;
+    margin: 5px 0 15px;
     width: 100%;
     height: 30px;
     background: #c5d1d6;
@@ -158,22 +161,27 @@ header .fab, header .fas {
     width: 20px;
     height: 20px;
     border: none;
-    border-radius: 50%;
     vertical-align: top;
     cursor: pointer;
+    margin-right: 15px;
 }
 #corPersonagem::-webkit-color-swatch-wrapper, #corComida::-webkit-color-swatch-wrapper {
     padding: 0; 
 }
+#corPersonagem::-moz-color-swatch-wrapper, #corComida::-moz-color-swatch-wrapper {
+    padding: 0; 
+}
 #corPersonagem::-webkit-color-swatch, #corComida::-webkit-color-swatch {
     border: none;
-    border-radius: 50%;
+}
+#corPersonagem::-moz-color-swatch, #corComida::-moz-color-swatch {
+    border: none;
 }
 #iniciarJogo {
     display: block;
     margin: 30px auto 0px;
     cursor: pointer;
-    padding: 15px;
+    padding: 10px;
     width: 100%;
     border: none;
     border-radius: 5px;
@@ -188,20 +196,20 @@ footer {
     display: block;
     position: absolute;
     bottom: 0;
-    height: 120px;
+    height: 80px;
     width: 100%;
     text-align: center;
 }
 footer ul {
     display: block;
-    margin: 30px 0px;
+    margin: 10px 0px;
 }
 footer li {
     display: inline-block;
     margin: 0px 20px;
 }
 footer .fab, footer .fas {
-    font-size: 38px;
+    font-size: 28px;
     color: rgb(214, 214, 214);
     transition: 0.3s;
 }
