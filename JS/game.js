@@ -277,7 +277,7 @@
     document.onkeyup = playerAnda;
 
     // Pega o click no botão para começar o jogo
-    jogar.onclick = iniciaJogo;
+    jogar.addEventListener("click", iniciaJogo);
 
     // Pego o click no plalcar/resultado para caso o usuário queira reiniciar
-    box.onclick = reiniciaJogo;
+    box.addEventListener("click", reiniciaJogo);
