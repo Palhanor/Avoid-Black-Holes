@@ -62,7 +62,7 @@
             tela.style.display = "block";
             box.style.display = "block";
             boxPlacar.style.display = "none";
-            velocidade = velocidadeInput.value;
+            velocidade = adjustSpeed(velocidadeInput.value);
             numBlackHoles = numBlackHolesInput.value;
             playerColor = playerColorInput.value;
             foodColor = foodColorInput.value;
@@ -85,6 +85,10 @@
             limpaBaixo();
             limpaEsquerda();
         }
+    }
+
+    function adjustSpeed(speedInputVal) {
+        return 250 - (speedInputVal * 2);
     }
 
     // Desenha a tela inicial quando começa (e em cada movimento)
@@ -188,7 +192,7 @@
                 box.style.display = "none";
                 boxPlacar.style.display = "block";
                 boxPlacar.querySelector("#placarPontuacao").textContent = contadorPontos;
-                boxPlacar.querySelector("#placarVelocidade").textContent = velocidade;
+                boxPlacar.querySelector("#placarVelocidade").textContent = velocidadeInput.value;
                 boxPlacar.querySelector("#placarBlackHoles").textContent = numBlackHoles;
             }
         }
