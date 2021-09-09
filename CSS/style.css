@@ -75,6 +75,21 @@ header li {
     top: 50%;
     transform: translateY(-50%);
 }
+#boxPlacar {
+    display: none;
+    width: 320px;
+    height: 220px;
+    border-radius: 12px;
+    margin: 150px auto 25px;
+    text-align: center;
+    background: linear-gradient(135deg, #ebf1f5, #FEFEFE);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.08), -10px -10px 15px rgba(255, 255, 255, 0.8);
+    padding: 60px 30px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s;
+    line-height: 1.8;
+}
 #tela {
     display: block;
     margin: 0 auto;

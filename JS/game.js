@@ -6,6 +6,7 @@
     var pincel = tela.getContext("2d");
     var placar = document.querySelector("#placar");
     var box = document.querySelector("#box");
+    var boxPlacar = document.querySelector("#boxPlacar");
     var jogar = document.querySelector("#iniciarJogo");
     var velocidadeInput = document.querySelector("#nivelVelocidade");
     var numBlackHolesInput = document.querySelector("#numObstaculos");
@@ -53,11 +54,14 @@
     /************** INICIALIZANDO ***************/
 
     // Inicia o jogo quando clica o notão de começar
-    function iniciaJogo() {
+    function controlaJogo() {
         if (jogando == false) {
             jogando = true;
             document.querySelector("#modalGame").style.display = "block";
             document.querySelector("footer").style.display = "none";
+            tela.style.display = "block";
+            box.style.display = "block";
+            boxPlacar.style.display = "none";
             velocidade = velocidadeInput.value;
             numBlackHoles = numBlackHolesInput.value;
             playerColor = playerColorInput.value;
@@ -65,6 +69,21 @@
             desenhaTela();
             geraPlayer();
             criaNovaComidinha();
+        } else {
+            jogando = false;
+            document.querySelector("#modalGame").style.display = "none";
+            document.querySelector("footer").style.display = "block";
+            contadorPontos = 0;
+            box.style.padding = "15px 40px";
+            placar.innerText = "Avoid Black Holes";
+            obstaculosX = [];
+            obstaculosY = [];
+            posicaoPlayerX = generateRandom(40);
+            posicaoPlayerY = generateRandom(20);
+            limpaCima();
+            limpaDireita();
+            limpaBaixo();
+            limpaEsquerda();
         }
     }
 
@@ -166,11 +185,11 @@
                 limpaBaixo();
                 limpaEsquerda();
                 tela.style.display = "none";
-                box.style.marginTop = "150px";
-                box.style.height = "220px";
-                box.style.textAlign = "center";
-                box.style.padding = "60px 30px";
-                box.innerHTML = "<strong>Pontuação: </strong>" + contadorPontos + "<br><strong>Velocidade: </strong>" + velocidade + "<br><strong>Black Holes por vez: </strong>" + numBlackHoles;
+                box.style.display = "none";
+                boxPlacar.style.display = "block";
+                boxPlacar.querySelector("#placarPontuacao").textContent = contadorPontos;
+                boxPlacar.querySelector("#placarVelocidade").textContent = velocidade;
+                boxPlacar.querySelector("#placarBlackHoles").textContent = numBlackHoles;
             }
         }
     }
@@ -191,11 +210,6 @@
     }
 
     /****************** COMANDOS USUÁRIO ***************/
-
-    // reinicia o jogo
-    function reiniciaJogo() {
-        location.reload();
-    }
 
     // Comandos de direção
     function playerAnda(event) {
@@ -277,7 +291,9 @@
     document.onkeyup = playerAnda;
 
     // Pega o click no botão para começar o jogo
-    jogar.addEventListener("click", iniciaJogo);
+    jogar.addEventListener("click", controlaJogo);
 
     // Pego o click no plalcar/resultado para caso o usuário queira reiniciar
-    box.addEventListener("click", reiniciaJogo);
+    box.addEventListener("click", controlaJogo);
+
+    boxPlacar.addEventListener("click", controlaJogo);
