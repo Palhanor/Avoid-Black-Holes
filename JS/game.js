@@ -193,7 +193,7 @@
                 boxPlacar.style.display = "block";
                 boxPlacar.querySelector("#placarPontuacao").textContent = contadorPontos;
                 boxPlacar.querySelector("#placarVelocidade").textContent = velocidadeInput.value;
-                boxPlacar.querySelector("#placarBlackHoles").textContent = numBlackHoles;
+                boxPlacar.querySelector("#placarBlackHoles").textContent = numBlackHoles * contadorPontos;
             }
         }
     }
