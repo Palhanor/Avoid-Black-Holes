@@ -1,245 +1,255 @@
+/* PRESETS */
+#modalGame #boxPlacar, #modalGame #box {
+  background: linear-gradient(135deg, #ebf1f5, #FEFEFE);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.08), -10px -10px 15px rgba(255, 255, 255, 0.8);
+}
+
+.footer .fas, .footer .fab {
+  font-size: 28px;
+  color: #d6d6d6;
+  transition: 0.3s;
+}
+.footer .fas:hover, .footer .fab:hover {
+  color: #fdbd1d;
+}
+
+#blocoControles #corComida, #blocoControles #corPersonagem {
+  border: none;
+  outline: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: none;
+  vertical-align: top;
+  cursor: pointer;
+  margin-right: 15px;
+}
+#blocoControles #corComida::-webkit-color-swatch-wrapper, #blocoControles #corPersonagem::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+#blocoControles #corComida::-moz-color-swatch-wrapper, #blocoControles #corPersonagem::-moz-color-swatch-wrapper {
+  padding: 0;
+}
+#blocoControles #corComida::-webkit-color-swatch, #blocoControles #corPersonagem::-webkit-color-swatch {
+  border: none;
+}
+#blocoControles #corComida::-moz-color-swatch, #blocoControles #corPersonagem::-moz-color-swatch {
+  border: none;
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-size: 16px;
-    font-style: unset;
-    font-family: 'Lato', sans-serif;
-} 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-style: unset;
+  font-family: "Lato", sans-serif;
+}
+
 body {
-    background-color: #F7FAFC;
-    overflow: hidden;
+  background-color: #F7FAFC;
+  overflow: hidden;
 }
-header {
-    box-shadow: 0 3px 10px lightgray;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 15px 80px 15px 100px;
-    margin-bottom: 30px;
-    height: 80px;
+
+.header {
+  box-shadow: 0 3px 10px lightgray;
+  width: 100%;
+  height: 80px;
+  padding: 15px 80px 15px 100px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-header img, header h1, header ul, header li {
-    display: inline-block;
-    cursor: pointer;
+.header .avoid-bh {
+  display: flex;
+  align-items: center;
 }
-/*header #imagemPrincipal {
-    width: 40px;
-    height: 40px;
-}*/
-header h1 {
-    font-size: 28px;
-    margin: 0px 30px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+.header .avoid-bh .logo {
+  display: inline-block;
+  cursor: pointer;
 }
-header ul {
-    float: right;
-    margin: 13px 150px;
+.header .avoid-bh .title {
+  font-size: 28px;
+  margin: 0px 30px;
+  display: inline-block;
+  cursor: pointer;
 }
-header li a {
-    font-size: 18px;
-    color: black;
-    text-decoration: none;
+.header .navigation {
+  margin: 13px 50px;
 }
-header li a:hover {
-    color: #fdbd1d;
+.header .navigation .list-item {
+  margin: 0px 0px 0px 30px;
+  display: inline-block;
+  cursor: pointer;
 }
-header li {
-    margin: 0px 0px 0px 30px;
+.header .navigation .list-item a {
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
 }
-#box {
-    width: 320px;
-    height: 80px;
-    border-radius: 12px;
-    margin: 15px auto 25px;
-    background: linear-gradient(135deg, #ebf1f5, #FEFEFE);
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.08), -10px -10px 15px rgba(255, 255, 255, 0.8);
-    padding: 15px 40px;
-    position: relative;
-    cursor: pointer;
-    transition: 0.3s;
-    line-height: 1.8;
+.header .navigation .list-item a:hover {
+  color: #fdbd1d;
 }
-#box img {
-    width: 50px;
-    height: 50px;
-}
-#box h1 {
-    display: inline-block;
-    margin-left: 15px;
-    font-size: 22px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-#boxPlacar {
-    display: none;
-    width: 320px;
-    height: 220px;
-    border-radius: 12px;
-    margin: 150px auto 25px;
-    text-align: center;
-    background: linear-gradient(135deg, #ebf1f5, #FEFEFE);
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.08), -10px -10px 15px rgba(255, 255, 255, 0.8);
-    padding: 25px 30px;
-    position: relative;
-    cursor: pointer;
-    transition: 0.3s;
-    line-height: 1.8;
-}
-#boxPlacar:hover {
-    width: 330px;
-    height: 230px;
-    margin: 145px auto 25px;
-    padding: 30px;
-    box-shadow: 15px 15px 25px rgba(0, 0, 0, 0.1), -15px -15px 20px rgba(255, 255, 255, 0.9);
-}
-#boxPlacar h2 {
-    font-size: 22px;
-    font-weight: 600;
-    margin: 10px 0;
-}
-#tela {
-    display: block;
-    margin: 0 auto;
-    border: 2px solid #BBB;
-    background-color: #efefef;
-}
-#modalGame {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #F7FAFC;
-    padding: 10px 0px;
-}
+
 #blocoControles {
-    width: 350px;
-    height: 320px;
-    border-radius: 15px;
-    margin: 140px auto;
-    background: linear-gradient(135deg, #ebf1f5, #FEFEFE);
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.08), -10px -10px 15px rgba(255, 255, 255, 0.8);
-    padding: 15px 50px;
-    position: relative;
+  width: 350px;
+  height: 320px;
+  border-radius: 15px;
+  margin: 50px auto;
+  background: linear-gradient(135deg, #ebf1f5, #FEFEFE);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.08), -10px -10px 15px rgba(255, 255, 255, 0.8);
+  padding: 15px 50px;
+  position: relative;
 }
 #blocoControles h2 {
-    font-size: 22px;
-    font-weight: 600;
-    text-align: center;
-    margin: 10px 0px;
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  margin: 10px 0px;
 }
 #blocoControles label {
-    font-size: 16px;
-    font-weight: 600;
-    margin-right: 3px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-right: 3px;
 }
-#nivelVelocidade {
-    margin: 5px 0 15px;
-    appearance: none;
-    width: 100%;
-    height: 20px;
-    background: #c5d1d6;
-    cursor: pointer;
-    opacity: 0.7;
-    transition: .3s;
+#blocoControles #nivelVelocidade {
+  margin: 5px 0 15px;
+  appearance: none;
+  width: 100%;
+  height: 20px;
+  background: #c5d1d6;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.3s;
 }
-#nivelVelocidade:hover {
-    opacity: 1;
+#blocoControles #nivelVelocidade:hover {
+  opacity: 1;
 }
-#nivelVelocidade::-webkit-slider-thumb {
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    background: #27b6cf;
-    cursor: pointer;
-} 
-#nivelVelocidade::-moz-range-thumb {
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    background: #27b6cf;
-    border: none;
-    border-radius: 0px;
-    cursor: pointer;
+#blocoControles #nivelVelocidade::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #27b6cf;
+  cursor: pointer;
 }
-#numObstaculos {
-    appearance: none;
-    margin: 5px 0 15px;
-    width: 100%;
-    height: 30px;
-    background: #c5d1d6;
-    cursor: pointer;
-    opacity: 0.7;
-    transition: .3s;
-    border: none;
-    border-radius: 3px;
-    padding: 5px 10px;
+#blocoControles #nivelVelocidade::-moz-range-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #27b6cf;
+  border: none;
+  border-radius: 0px;
+  cursor: pointer;
 }
-#corPersonagem, #corComida {
-    border: none;
-    outline: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border: none;
-    vertical-align: top;
-    cursor: pointer;
-    margin-right: 15px;
+#blocoControles #numObstaculos {
+  appearance: none;
+  margin: 5px 0 15px;
+  width: 100%;
+  height: 30px;
+  background: #c5d1d6;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.3s;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
 }
-#corPersonagem::-webkit-color-swatch-wrapper, #corComida::-webkit-color-swatch-wrapper {
-    padding: 0; 
+#blocoControles #iniciarJogo {
+  display: block;
+  margin: 30px auto 0px;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  background-color: #c5d1d6;
+  transition: 0.3s;
+  font-size: 18px;
 }
-#corPersonagem::-moz-color-swatch-wrapper, #corComida::-moz-color-swatch-wrapper {
-    padding: 0; 
+#blocoControles #iniciarJogo:hover {
+  background-color: #b1c0c7;
 }
-#corPersonagem::-webkit-color-swatch, #corComida::-webkit-color-swatch {
-    border: none;
+
+#modalGame {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #F7FAFC;
+  padding: 10px 0px;
 }
-#corPersonagem::-moz-color-swatch, #corComida::-moz-color-swatch {
-    border: none;
+#modalGame #box {
+  width: 320px;
+  height: 80px;
+  border-radius: 12px;
+  margin: 15px auto 25px;
+  padding: 15px 40px;
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s;
+  line-height: 1.8;
 }
-#iniciarJogo {
-    display: block;
-    margin: 30px auto 0px;
-    cursor: pointer;
-    padding: 10px;
-    width: 100%;
-    border: none;
-    border-radius: 5px;
-    background-color: #c5d1d6;
-    transition: 0.3s;
-    font-size: 18px;
+#modalGame #box img {
+  width: 50px;
+  height: 50px;
 }
-#iniciarJogo:hover {
-    background-color: #b1c0c7;
+#modalGame #box h1 {
+  display: inline-block;
+  margin-left: 15px;
+  font-size: 22px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
-footer {
-    display: block;
-    position: absolute;
-    bottom: 0;
-    height: 80px;
-    width: 100%;
-    text-align: center;
+#modalGame #boxPlacar {
+  display: none;
+  width: 320px;
+  height: 220px;
+  border-radius: 12px;
+  margin: 150px auto 25px;
+  text-align: center;
+  padding: 25px 30px;
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s;
+  line-height: 1.8;
 }
-footer ul {
-    display: block;
-    margin: 10px 0px;
+#modalGame #boxPlacar:hover {
+  width: 330px;
+  height: 230px;
+  margin: 145px auto 25px;
+  padding: 30px;
+  box-shadow: 15px 15px 25px rgba(0, 0, 0, 0.1), -15px -15px 20px rgba(255, 255, 255, 0.9);
 }
-footer li {
-    display: inline-block;
-    margin: 0px 20px;
+#modalGame #boxPlacar h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 10px 0;
 }
-footer .fab, footer .fas {
-    font-size: 28px;
-    color: rgb(214, 214, 214);
-    transition: 0.3s;
+#modalGame #tela {
+  display: block;
+  margin: 0 auto;
+  border: 2px solid #BBB;
+  background-color: #efefef;
 }
-footer .fab:hover, footer .fas:hover {
-    color: #fdbd1d;;
+
+.footer {
+  display: flex;
+  justify-content: center;
+  height: 80px;
+  width: 100%;
+  text-align: center;
 }
+.footer__icons {
+  display: block;
+  margin: 10px 0px;
+}
+.footer__icon {
+  display: inline-block;
+  margin: 0px 20px;
+}
+
+/*# sourceMappingURL=style.css.map */

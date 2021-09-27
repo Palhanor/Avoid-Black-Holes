@@ -1,0 +1,25 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    height: 80px;
+    width: 100%;
+    text-align: center;
+
+    &__icons {
+        display: block;
+        margin: 10px 0px;
+    }
+
+    &__icon {
+        display: inline-block;
+        margin: 0px 20px;
+    }
+
+    .fab {
+        @extend %footer-icon-style;
+    }
+    
+    .fas {
+        @extend %footer-icon-style;
+    }
+}

@@ -1,0 +1,49 @@
+$black-shadow: 10px 10px 20px rgba(0, 0, 0, 0.08);
+$white-shadow: -10px -10px 15px rgba(255, 255, 255, 0.8);
+$gradient: linear-gradient(135deg, #ebf1f5, #FEFEFE);
+$font-size: 16px;
+
+// Adicionar as queries responsivas
+
+%conteiner-style {
+    background: $gradient;
+    box-shadow: $black-shadow, $white-shadow;
+}
+
+%footer-icon-style {
+    font-size: 28px;
+    color: rgb(214, 214, 214);
+    transition: 0.3s;
+
+    &:hover {
+        color: #fdbd1d;;
+    }
+}
+
+%color-input {
+    border: none;
+    outline: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: none;
+    vertical-align: top;
+    cursor: pointer;
+    margin-right: 15px;
+
+    &::-webkit-color-swatch-wrapper {
+        padding: 0; 
+    }
+
+    &::-moz-color-swatch-wrapper {
+        padding: 0; 
+    }
+
+    &::-webkit-color-swatch {
+        border: none;
+    }
+
+    &::-moz-color-swatch {
+        border: none;
+    }
+}
